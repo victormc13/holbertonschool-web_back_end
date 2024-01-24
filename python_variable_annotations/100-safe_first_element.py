@@ -5,10 +5,10 @@ Defines the 'safe_first_element' function that returns
 first element of 'lst' argument if is not None
 """
 
-from typing import Sequence, Any, Optional
+from typing import Sequence, Any, Union
 
 
-def safe_first_element(lst: Sequence[Any]) -> Optional[Any]:
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
     """
     Get the first element of the sequence if it exists,
     otherwise return None
