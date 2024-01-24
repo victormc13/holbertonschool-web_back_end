@@ -8,7 +8,7 @@ and returns a list type
 from typing import Tuple, List, Any
 
 
-def zoom_array(lst: Tuple, factor: int = 2) -> List: 
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     """Returns a list"""
     zoomed_in: List = [
         item for item in lst
