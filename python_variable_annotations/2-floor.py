@@ -8,6 +8,6 @@ and returns the floor of the float.
 from math import floor
 
 
-def concat(n: float) -> int:
+def floor(n: float) -> int:
     """Return the floor of a float"""
     return floor(n)
