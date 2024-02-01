@@ -9,4 +9,4 @@ def insert_school(mongo_collection, **kwargs):
     return result.inserted_id
 
 if __name__ == '__main__':
-    list_all(mongo_collection)
+    insert_school(mongo_collection, **kwargs)
