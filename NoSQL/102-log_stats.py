@@ -37,7 +37,7 @@ def log_stats(mongo_collection):
 
     print("IPs:")
     for ip in top_ips:
-        print(f"\tip['_id']}: {ip['count']}")
+        print(f"\t{ip['_id']}: {ip['count']}")
 
 
 if __name__ == "__main__":
