@@ -1,9 +1,22 @@
-// eslint-disable-next-line class-methods-use-this
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this.validateString(name, 'Name');
-    this._length = this.validateNumber(length, 'Length');
-    this._students = this.validateArray(students, 'Students');
+    if (typeof name !== 'string') {
+      throw new TypeError('name must be a string');
+    }
+    this._name = name;
+
+    if (typeof length !== 'number') {
+      throw new TypeError('length must be a number');
+    }
+    this._length = length;
+
+    if (
+      !Array.isArray(students) ||
+      !students.every((student) => typeof student === 'string')
+    ) {
+      throw new TypeError('students must be an array');
+    }
+    this._students = students;
   }
 
   // Getter and setter for name
@@ -12,7 +25,10 @@ export default class HolbertonCourse {
   }
 
   set name(newName) {
-    this._name = this.validateString(newName, 'Name');
+    if (typeof newName !== 'string') {
+      throw new TypeError('name must be a string');
+    }
+    this._name = newName;
   }
 
   // Getter and setter for length
@@ -21,7 +37,10 @@ export default class HolbertonCourse {
   }
 
   set length(newLength) {
-    this._length = this.validateNumber(newLength, 'Length');
+    if (typeof newLength !== 'number') {
+      throw new TypeError('length must be a number');
+    }
+    this._length = newLength;
   }
 
   // Getter and setter for students
@@ -30,30 +49,12 @@ export default class HolbertonCourse {
   }
 
   set students(newStudents) {
-    this._students = this.validateArray(newStudents, 'Students');
-  }
-
-  // Helper method to validate string type
-  validateString(value, attribute) {
-    if (typeof value !== 'string') {
-      throw new TypeError(`${attribute} must be a string`);
+    if (
+      !Array.isArray(newStudents) ||
+      !newStudents.every((student) => typeof student === 'string')
+    ) {
+      throw new TypeError('students must be an array');
     }
-    return value;
-  }
-
-  // Helper method to validate number type
-  validateNumber(value, attribute) {
-    if (typeof value !== 'number') {
-      throw new TypeError(`${attribute} must be a number`);
-    }
-    return value;
-  }
-
-  // Helper method to validate array type
-  validateArray(value, attribute) {
-    if (!Array.isArray(value)) {
-      throw new TypeError(`${attribute} must be an array`);
-    }
-    return value;
+    this._students = newStudents;
   }
 }
