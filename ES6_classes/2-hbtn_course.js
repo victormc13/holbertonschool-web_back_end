@@ -33,7 +33,7 @@ export default class HolbertonCourse {
   }
 
   // Helper method to validate string type
-  static validateString(value, attribute) {
+  validateString(value, attribute) {
     if (typeof value !== 'string') {
       throw new TypeError(`${attribute} must be a string`);
     }
@@ -41,7 +41,7 @@ export default class HolbertonCourse {
   }
 
   // Helper method to validate number type
-  static validateNumber(value, attribute) {
+  validateNumber(value, attribute) {
     if (typeof value !== 'number') {
       throw new TypeError(`${attribute} must be a number`);
     }
@@ -49,7 +49,7 @@ export default class HolbertonCourse {
   }
 
   // Helper method to validate array type
-  static validateArray(value, attribute) {
+  validateArray(value, attribute) {
     if (!Array.isArray(value)) {
       throw new TypeError(`${attribute} must be an array`);
     }
