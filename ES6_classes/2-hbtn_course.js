@@ -1,8 +1,8 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this.validateString(name, "Name");
-    this._length = this.validateNumber(length, "Length");
-    this._students = this.validateArray(students, "Students");
+    this._name = this.validateString(name, 'Name');
+    this._length = this.validateNumber(length, 'Length');
+    this._students = this.validateArray(students, 'Students');
   }
 
   // Getter and setter for name
@@ -11,7 +11,7 @@ export default class HolbertonCourse {
   }
 
   set name(newName) {
-    this._name = this.validateString(newName, "Name");
+    this._name = this.validateString(newName, 'Name');
   }
 
   // Getter and setter for length
@@ -20,7 +20,7 @@ export default class HolbertonCourse {
   }
 
   set length(newLength) {
-    this._length = this.validateNumber(newLength, "Length");
+    this._length = this.validateNumber(newLength, 'Length');
   }
 
   // Getter and setter for students
@@ -29,27 +29,27 @@ export default class HolbertonCourse {
   }
 
   set students(newStudents) {
-    this._students = this.validateArray(newStudents, "Students");
+    this._students = this.validateArray(newStudents, 'Students');
   }
 
   // Helper method to validate string type
-  validateString(value, attribute) {
-    if (typeof value !== "string") {
+  static validateString(value, attribute) {
+    if (typeof value !== 'string') {
       throw new TypeError(`${attribute} must be a string`);
     }
     return value;
   }
 
   // Helper method to validate number type
-  validateNumber(value, attribute) {
-    if (typeof value !== "number") {
+  static validateNumber(value, attribute) {
+    if (typeof value !== 'number') {
       throw new TypeError(`${attribute} must be a number`);
     }
     return value;
   }
 
   // Helper method to validate array type
-  validateArray(value, attribute) {
+  static validateArray(value, attribute) {
     if (!Array.isArray(value)) {
       throw new TypeError(`${attribute} must be an array`);
     }
