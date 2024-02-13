@@ -1,7 +1,7 @@
 export default function createIteratorObject(report) {
   function* iterateEmployees(report) {
-    if (report) {
-      for (const department in report.allEmployees) {
+    for (const department in report.allEmployees) {
+      if (report.allEmployees.hasOwn(department)) {
         const employees = report.allEmployees[department];
         for (const employee of employees) {
           yield employee;
