@@ -10,5 +10,3 @@ export default function createInt8TypedArray(length, position, value) {
 
   return view;
 }
-
-console.log(createInt8TypedArray(10, 2, 89));
