@@ -1,10 +1,9 @@
-export default function cleanSet(setObject, startString) {
+export default function cleanSet(set, startString) {
   let result = '';
-  setObject.forEach((value) => {
+  set.forEach((value) => {
     if (value.startsWith(startString)) {
-      result += value.slice(startString.length) + '-'
+      result += `${value.slice(startString.length)}-`;
     }
-  })
-  return result.slice(0,
-    -1)
+  });
+  return result.slice(0, -1);
 }
